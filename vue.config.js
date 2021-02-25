@@ -7,7 +7,7 @@ const PUBLIC_PATH = process.env.NODE_ENV === 'production' ? '/' : '/'
 
 module.exports = {
     lintOnSave: false,
-    // 在vue-cli.3.3版本后 baseUrl被废除了改为publicPath
+    // vue-cli.3.3后 baseUrl => publicPath
     publicPath: PUBLIC_PATH,
     chainWebpack: config => {
         config.resolve.alias
@@ -20,7 +20,7 @@ module.exports = {
         proxy: {
             '/xproject': {
                 target: "http://localhost:8888",
-                changOrigin: true
+                changeOrigin: true
             }
         }
     }
