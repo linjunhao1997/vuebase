@@ -18,10 +18,22 @@ module.exports = {
     productionSourceMap: false,
     devServer: {
         proxy: {
+            '/tpApi/taobao': {
+                target: "http://api.m.taobao.com",
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/tpApi': ''
+                }
+            },
             '/xproject': {
                 target: "http://localhost:8888",
                 changeOrigin: true
-            }
+            },
+            '/api': {
+                target: "http://localhost:8888",
+                changeOrigin: true
+            },
+
         }
     }
 }

@@ -1,8 +1,5 @@
 import Mock from 'mockjs'
+import {getUserInfo} from "@/mock/response/user";
 
-Mock.mock('http://localhost:8080/user', {
-    'name': '@name',
-    'email': '@email',
-    'age|1-10': 5
-})
+Mock.mock('/api/getUserInfo', getUserInfo)
 
